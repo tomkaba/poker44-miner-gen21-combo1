@@ -40,6 +40,8 @@ def _runtime_implementation_files(repo_root: Path) -> List[Path]:
         path
         for path in (repo_root / "components").rglob("*")
         if path.is_file()
+        and "__pycache__" not in path.parts
+        and path.suffix != ".pyc"
     )
     return [
         Path(__file__).resolve(),
