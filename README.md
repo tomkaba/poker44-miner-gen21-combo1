@@ -1,8 +1,8 @@
-# gen21combo1
+# gen21-combo1
 
 Minimal release repository for Poker44 miner runtime scoring.
 
-This repository is a standalone Poker44 miner release for `gen21combo1`, a 6-model local ensemble. The miner loads copied component artifacts locally, applies each component's original runtime threshold, and emits the combo prediction via majority vote with `ml20tens1` as the 3:3 tie-breaker.
+This repository is a standalone Poker44 miner release for `gen21-combo1`, a 6-model local ensemble. The miner loads copied component artifacts locally, applies each component's original runtime threshold, and emits the combo prediction via majority vote with `ml20tens1` as the 3:3 tie-breaker.
 
 ## Quick start
 
@@ -52,7 +52,7 @@ Combo decision rule:
 
 Published repo: https://github.com/tomkaba/poker44-miner-gen21-combo1
 
-Base release lineage: copied local component artifacts wired into the `gen21combo1` ensemble runtime.
+Base release lineage: copied local component artifacts wired into the `gen21-combo1` ensemble runtime.
 
 Manifest implementation SHA256 is computed from:
 

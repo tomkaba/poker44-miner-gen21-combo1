@@ -123,13 +123,13 @@ class Miner(BaseMinerNeuron):
             repo_root=repo_root,
             implementation_files=_runtime_implementation_files(repo_root),
             defaults={
-                "model_name": "gen21combo1",
+                "model_name": "gen21-combo1",
                 "model_version": "21.1",
                 "framework": "python-local-ensemble",
                 "license": "MIT",
                 "repo_url": "https://github.com/tomkaba/poker44-miner-gen21-combo1",
                 "repo_commit": git_commit,
-                "notes": "gen21combo1 majority-vote ensemble over ml17_pre3, gen17_tuner_pre6, gen17_tuner2_pre2, gen17_tuner_synth15, ml20tens1, and gen18_1 with per-model thresholds preserved and ml20tens1 as the 3:3 tie-breaker.",
+                "notes": "gen21-combo1 majority-vote ensemble over ml17_pre3, gen17_tuner_pre6, gen17_tuner2_pre2, gen17_tuner_synth15, ml20tens1, and gen18_1 with per-model thresholds preserved and ml20tens1 as the 3:3 tie-breaker.",
                 "open_source": True,
                 "inference_mode": "local",
                 "training_data_statement": "Uses copied local scorer artifacts from the selected gen17, gen18, and ml20 runtime releases, preserving each release threshold inside the ensemble.",
@@ -212,7 +212,7 @@ class Miner(BaseMinerNeuron):
             chunks=chunks,
         )
 
-        bt.logging.info(f"Scored {len(chunks)} chunks with scorer gen21combo1.")
+        bt.logging.info(f"Scored {len(chunks)} chunks with scorer gen21-combo1.")
         return synapse
 
     @staticmethod
