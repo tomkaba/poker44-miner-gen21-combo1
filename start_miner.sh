@@ -17,7 +17,6 @@ WALLET_NAME="sn126b"
 SESSION_PREFIX="sn126b_m"
 AXON_BASE_PORT="12080"
 VENV_BIN="$REPO/.venv/bin"
-MODEL_ARTIFACT_REL="weights/gen20_tens2_10k_vote101_hardened.ts"
 SUBTENSOR_NETWORK="${POKER44_SUBTENSOR_NETWORK:-finney}"
 SUBTENSOR_CHAIN_ENDPOINT="${POKER44_SUBTENSOR_CHAIN_ENDPOINT:-ws://178.18.251.11:9944}"
 
@@ -26,29 +25,23 @@ if [[ ! -x "$VENV_BIN/python" ]]; then
   exit 1
 fi
 
-MODEL_ARTIFACT_PATH="$REPO/$MODEL_ARTIFACT_REL"
-if [[ ! -f "$MODEL_ARTIFACT_PATH" ]]; then
-  echo "ERROR: Missing model artifact: $MODEL_ARTIFACT_REL"
+if ! PYTHONPATH="$REPO:${PYTHONPATH:-}" "$VENV_BIN/python" - <<'PY'
+from poker44.miner_heuristics import get_chunk_scorer_startup_check
+
+result = get_chunk_scorer_startup_check("runtime")
+if result.get("ok"):
+    raise SystemExit(0)
+
+print(f"ERROR: Combo startup check failed: {result.get('error') or 'unknown error'}")
+components = result.get("details", {}).get("components", {})
+for name, detail in components.items():
+    error = detail.get("error")
+    if error:
+        print(f" - {name}: {error}")
+raise SystemExit(1)
+PY
+then
   exit 1
-fi
-
-# If the model file is still a Git LFS pointer, try to fetch real content.
-if head -n 1 "$MODEL_ARTIFACT_PATH" 2>/dev/null | grep -q "^version https://git-lfs.github.com/spec/v1$"; then
-  echo "[lfs] Detected Git LFS pointer in $MODEL_ARTIFACT_REL"
-  if git -C "$REPO" lfs version >/dev/null 2>&1; then
-    echo "[lfs] Fetching model artifact via git lfs pull..."
-    git -C "$REPO" lfs pull --include "$MODEL_ARTIFACT_REL"
-  else
-    echo "ERROR: git-lfs is not installed on this host."
-    echo "Install git-lfs, then run: git -C $REPO lfs pull --include $MODEL_ARTIFACT_REL"
-    exit 1
-  fi
-
-  if head -n 1 "$MODEL_ARTIFACT_PATH" 2>/dev/null | grep -q "^version https://git-lfs.github.com/spec/v1$"; then
-    echo "ERROR: Model artifact is still an LFS pointer after pull: $MODEL_ARTIFACT_REL"
-    echo "Check git-lfs installation and repository authentication, then retry."
-    exit 1
-  fi
 fi
 
 for raw_id in $(echo "$IDS_STRING" | tr ',' '\n'); do
