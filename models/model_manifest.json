@@ -1,17 +1,17 @@
 {
     "schema_version": "1",
     "open_source": true,
-    "model_name": "gen21combo1",
+    "model_name": "gen21-combo1",
     "model_version": "21.1",
     "framework": "python-local-ensemble",
     "license": "MIT",
     "repo_url": "https://github.com/tomkaba/poker44-miner-gen21-combo1",
-    "repo_commit": "ccc579ed44c47103f8463590c7a26437d985fc10",
+    "repo_commit": "067c51cab31192bda5d2f7c06279d1092c282987",
     "training_data_statement": "Uses copied local scorer artifacts from the selected gen17, gen18, and ml20 runtime releases, preserving each release threshold inside the ensemble.",
     "private_data_attestation": "This miner does not train on validator-private human data.",
     "data_attestation": "This miner does not train on validator-private human data.",
     "inference_mode": "local",
-    "implementation_sha256": "49a92188212ddc68706fd53c853a781eaa84c17228395f19ed944011d1d3b5d6",
+    "implementation_sha256": "608929fc78f9e1a4ae5bdd1061f3bc8fb450470167009109c70c760b136f13bc",
     "implementation_files": [
         "neurons/miner.py",
         "start_miner.sh",
@@ -74,5 +74,5 @@
         "components/ml20tens1/poker44/miner_heuristics.py",
         "components/ml20tens1/weights/gen20_tens1_7k_vote101_hardened.ts"
     ],
-    "notes": "gen21combo1 majority-vote ensemble over ml17_pre3, gen17_tuner_pre6, gen17_tuner2_pre2, gen17_tuner_synth15, ml20tens1, and gen18_1 with per-model thresholds preserved and ml20tens1 as the 3:3 tie-breaker."
+    "notes": "gen21-combo1 majority-vote ensemble over ml17_pre3, gen17_tuner_pre6, gen17_tuner2_pre2, gen17_tuner_synth15, ml20tens1, and gen18_1 with per-model thresholds preserved and ml20tens1 as the 3:3 tie-breaker."
 }
