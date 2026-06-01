@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "open_source": true,
+  "model_name": "poker44-gen17-tuner-pre2-base-runtime",
+  "model_version": "gen17-pre2-base-runtime",
+  "framework": "python-numpy-logistic-stacked",
+  "license": "MIT",
+  "repo_url": "https://github.com/tomkaba/poker44-miner-gen17-tuner-pre2",
+  "repo_commit": "91dd699d0e223b0a5b573c518c5d2de395ef1720",
+  "inference_mode": "local",
+  "training_data_statement": "Trained on benchmark groundtruth with calibrated chunk aggregation.",
+  "data_attestation": "This stage uses benchmark-derived calibration data and does not use validator-private human data.",
+  "private_data_attestation": "This stage does not use validator-private human data.",
+  "implementation_files": [
+    "models/base_runtime/hand_model.npz",
+    "models/base_runtime/chunk_aggregator_model.npz",
+    "models/base_runtime/score_chunk.py",
+    "models/base_runtime/feature_extractor_frozen.py"
+  ],
+  "implementation_sha256": "e98a6e07e411e4dd22cd40c4a5fdaabb993a183005a02813c4a5c463ce47665e",
+  "notes": "Bundled gen17 pre2 base runtime vendored inside the tuner-pre2 overlay release."
+}

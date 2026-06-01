@@ -1,0 +1,200 @@
+{
+  "model_name": "gen17-math-1-pf-boost",
+  "version": 1,
+  "created_at_utc": "2026-05-23T14:25:14.086167+00:00",
+  "source_dataset": "/home/tk/training_gen17/artifacts/strategy_fit_preflop_full/chunk_rows.jsonl",
+  "description": "Positive preflop rationality boost model based on hard-to-fake rational patterns and edge-case consistency.",
+  "impossible_good_rate": 0.1875,
+  "impossible_fade_rate": 0.2909090909090909,
+  "feasible_start_rate": 0.6574363992172211,
+  "feasible_full_rate": 0.7580645161290323,
+  "surprise_good": 8.090302227890113,
+  "surprise_bad": 19.717940499315976,
+  "consistency_target": 0.34770449620801736,
+  "consistency_contrast": 0.4502093301435407,
+  "std_consistency_target": 0.41064823885511986,
+  "std_consistency_contrast": 0.41759883464759573,
+  "dispersion_target": 0.21965697962612898,
+  "dispersion_contrast": 0.09469379476392831,
+  "edge_std_target": 0.195557467575162,
+  "edge_std_contrast": 0.061847473776128314,
+  "weights": {
+    "impossible_component": 0.24,
+    "feasible_component": 0.2,
+    "surprise_component": 0.12,
+    "consistency_component": 0.2,
+    "stability_component": 0.14,
+    "edge_component": 0.1
+  },
+  "recommended_boost_weight": 0.015591541421139582,
+  "recommended_boost_threshold": 0.55,
+  "medium_boost_threshold": 0.45,
+  "high_boost_threshold": 0.72,
+  "recommended_combination": {
+    "mode": "residual_add",
+    "formula": "adjusted_score = base_score + (1 - base_score) * boost_weight * gen17_math_1_pf_boost"
+  },
+  "calibration": {
+    "bot_impossible_distribution": {
+      "count": 2080,
+      "mean": 0.2130412175862904,
+      "p10": 0.11842105263157894,
+      "p25": 0.1509433962264151,
+      "median": 0.1875,
+      "p75": 0.23333333333333334,
+      "p90": 0.2909090909090909
+    },
+    "bot_feasible_distribution": {
+      "count": 2080,
+      "mean": 0.691487404747745,
+      "p10": 0.5881617647058823,
+      "p25": 0.6574363992172211,
+      "median": 0.7121212121212122,
+      "p75": 0.7580645161290323,
+      "p90": 0.7971014492753623
+    },
+    "bot_surprise_distribution": {
+      "count": 2080,
+      "mean": 11.113894737085852,
+      "p10": 6.761285324820952,
+      "p25": 8.090302227890113,
+      "median": 9.830227199194198,
+      "p75": 12.612668735459039,
+      "p90": 16.558643981619007
+    },
+    "human_surprise_distribution": {
+      "count": 2080,
+      "mean": 27.659583085779353,
+      "p10": 17.155573384435556,
+      "p25": 19.717940499315976,
+      "median": 24.08484773852392,
+      "p75": 32.91430839567681,
+      "p90": 43.46424883348046
+    },
+    "bot_consistency_distribution": {
+      "count": 2080,
+      "mean": 0.3678357050039259,
+      "p10": 0.24260325667082666,
+      "p25": 0.28956901128996204,
+      "median": 0.34770449620801736,
+      "p75": 0.43290070265394287,
+      "p90": 0.5242968056787932
+    },
+    "human_consistency_distribution": {
+      "count": 2080,
+      "mean": 0.4654659288402845,
+      "p10": 0.3426967592592593,
+      "p25": 0.39059946895424835,
+      "median": 0.4502093301435407,
+      "p75": 0.5251638025737602,
+      "p90": 0.6200386904761905
+    },
+    "bot_std_consistency_distribution": {
+      "count": 2080,
+      "mean": 0.40569770184868154,
+      "p10": 0.36666265813472654,
+      "p25": 0.39165608103602945,
+      "median": 0.41064823885511986,
+      "p75": 0.42660419762231494,
+      "p90": 0.4405609687427094
+    },
+    "human_std_consistency_distribution": {
+      "count": 2080,
+      "mean": 0.40067843565803224,
+      "p10": 0.3354814727602353,
+      "p25": 0.38977400495283604,
+      "median": 0.41759883464759573,
+      "p75": 0.43502054451227146,
+      "p90": 0.44500331852132774
+    },
+    "bot_dispersion_distribution": {
+      "count": 2080,
+      "mean": 0.21719595846126946,
+      "p10": 0.19818094198563893,
+      "p25": 0.21035011278676202,
+      "median": 0.21965697962612898,
+      "p75": 0.22775547996976567,
+      "p90": 0.23517416360536747
+    },
+    "human_dispersion_distribution": {
+      "count": 2080,
+      "mean": 0.09560921511991245,
+      "p10": 0.07273746051104882,
+      "p25": 0.08261906496660595,
+      "median": 0.09469379476392831,
+      "p75": 0.10792832847424684,
+      "p90": 0.11984403392546646
+    },
+    "bot_cheap_fold_std_distribution": {
+      "count": 2080,
+      "mean": 0.3177986743840714,
+      "p10": 0.25208281539410166,
+      "p25": 0.2855595635357906,
+      "median": 0.3214869043626306,
+      "p75": 0.35310517094277827,
+      "p90": 0.38107001000744906
+    },
+    "human_cheap_fold_std_distribution": {
+      "count": 2080,
+      "mean": 0.031203810434815814,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "p90": 0.133608531424537
+    },
+    "bot_expensive_call_std_distribution": {
+      "count": 2080,
+      "mean": 0.03481370434468061,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.06298588448311818,
+      "p90": 0.12698306053139072
+    },
+    "human_expensive_call_std_distribution": {
+      "count": 2080,
+      "mean": 0.0535411956584891,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.11395071102426824,
+      "p90": 0.1524553389864964
+    },
+    "bot_passive_checked_std_distribution": {
+      "count": 2080,
+      "mean": 0.2607109703651659,
+      "p10": 0.1805056789623209,
+      "p25": 0.22474022768281512,
+      "median": 0.2651854983628554,
+      "p75": 0.30190404494722367,
+      "p90": 0.3350533011323481
+    },
+    "human_passive_checked_std_distribution": {
+      "count": 2080,
+      "mean": 0.18067874752541635,
+      "p10": 0.09705387192756534,
+      "p25": 0.14429226641413728,
+      "median": 0.18554242132838494,
+      "p75": 0.2249671912608112,
+      "p90": 0.25983614159327495
+    },
+    "target_mean_penalty_bot_only": 0.07491672876776595,
+    "overall_mean_penalty": 0.5352959374742647,
+    "raw_mean_boost_all_rows": 0.3203546169943626,
+    "raw_mean_boost_bot_only": 0.5432643916271664,
+    "effective_mean_boost_bot_only": 0.07491672876776595,
+    "recent_pre6_equalization": {
+      "calibrated_at_utc": "2026-05-24T16:00:00+00:00",
+      "reference_pre_artifact": "/home/tk/training_gen17/artifacts/gen17-preprod-stage2-hl-cal-mild-sharp",
+      "reference_window": "recent_3d_unique_chunks",
+      "target": "match mean absolute score impact of preflop penalty on recent chunks",
+      "recent_chunk_count": 1040,
+      "base_pre_mean_score": 0.34951640410445833,
+      "mean_penalty_effect": 0.004416286240644655,
+      "previous_boost_weight": 0.13790104767105754,
+      "previous_mean_boost_effect": 0.03906031372718899,
+      "equalized_boost_weight": 0.015591541421139582
+    }
+  }
+}

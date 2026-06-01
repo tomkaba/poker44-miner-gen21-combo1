@@ -1,0 +1,4 @@
+/.venv/
+/poker44.egg-info/
+__pycache__/
+*.pyc

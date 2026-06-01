@@ -1,0 +1,31 @@
+{
+    "schema_version": "1",
+    "open_source": true,
+    "model_name": "poker44_ml17_pre3",
+    "model_version": "17.pre3-stage2-hl-cal-mild",
+    "framework": "python-numpy-logistic-stacked",
+    "license": "MIT",
+    "repo_url": "https://github.com/tomkaba/poker44-miner-ml17_pre3",
+    "repo_commit": "0f77296f9c2e3f1471bd1b6fae3e6dba562e6d31",
+    "inference_mode": "local",
+    "training_data_statement": "Trained on benchmark groundtruth with mild calibrated chunk aggregation.",
+    "data_attestation": "This stage uses benchmark-derived calibration data for a mild chunk-aggregator recalibration and does not use validator-private human data.",
+    "private_data_attestation": "This stage does not use validator-private human data.",
+    "implementation_files": [
+        "models/hand_model.npz",
+        "models/chunk_aggregator_model.npz",
+        "models/score_chunk.py",
+        "models/feature_extractor_frozen.py",
+        "neurons/miner.py",
+        "poker44/__init__.py",
+        "poker44/base/miner.py",
+        "poker44/base/neuron.py",
+        "poker44/miner_heuristics.py",
+        "poker44/utils/config.py",
+        "poker44/utils/misc.py",
+        "poker44/utils/model_manifest.py",
+        "poker44/validator/synapse.py"
+    ],
+    "implementation_sha256": "446125dff73d3a4208680b0df2adc5d13afb8977cceb4b6bb5cfce831a982b15",
+    "notes": "Gen17 pre-3 runtime classifier with mild calibrated hand-level chunk aggregation."
+}

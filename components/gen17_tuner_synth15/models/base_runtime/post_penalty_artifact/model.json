@@ -1,0 +1,125 @@
+{
+  "model_name": "gen17-math-1-post",
+  "version": 1,
+  "created_at_utc": "2026-05-24T15:54:38.749245+00:00",
+  "source_dataset": "/home/tk/training_gen17/artifacts/strategy_fit_preflop_full/chunk_rows.jsonl",
+  "description": "First-pass postflop public-state penalty model for repeated mathematically suspicious postflop play.",
+  "turn_like_low_bad": 0.0,
+  "turn_like_good": 0.2589285714285714,
+  "river_miss_soft": 0.0,
+  "river_miss_hard": 0.6666666666666666,
+  "river_aggression_low_bad": 0.18181818181818182,
+  "river_aggression_good": 0.18,
+  "expensive_call_soft": 0.037037037037037035,
+  "expensive_call_hard": 0.16666666666666666,
+  "action_entropy_soft": 0.4383449517578088,
+  "action_entropy_hard": 0.5390389038026331,
+  "river_miss_veto": 1.0,
+  "expensive_call_veto": 0.25,
+  "river_aggression_veto": 0.0,
+  "weights": {
+    "turn_component": 0.22,
+    "river_component": 0.24,
+    "river_aggr_component": 0.2,
+    "expensive_component": 0.2,
+    "entropy_component": 0.14
+  },
+  "recommended_penalty_weight": 1.0,
+  "recommended_penalty_threshold": 0.5,
+  "recommended_combination": {
+    "mode": "multiply",
+    "formula": "adjusted_score = base_score * (1 - penalty_weight * gen17_math_1_post_penalty)"
+  },
+  "calibration": {
+    "bot_turn_like_distribution": {
+      "count": 2080,
+      "mean": 0.19186555698574928,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.2589285714285714,
+      "p90": 1.0
+    },
+    "human_turn_like_distribution": {
+      "count": 2080,
+      "mean": 0.12331120268620269,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "p90": 0.5
+    },
+    "bot_river_distribution": {
+      "count": 2080,
+      "mean": 0.1803628663003663,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "p90": 1.0
+    },
+    "human_river_distribution": {
+      "count": 2080,
+      "mean": 0.2569284188034188,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.6666666666666666,
+      "p90": 1.0
+    },
+    "bot_river_aggression_distribution": {
+      "count": 2080,
+      "mean": 0.33890002618351256,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.3333333333333333,
+      "p75": 0.5,
+      "p90": 0.75
+    },
+    "human_river_aggression_distribution": {
+      "count": 2080,
+      "mean": 0.11004588164682493,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.18181818181818182,
+      "p90": 0.3333333333333333
+    },
+    "bot_expensive_distribution": {
+      "count": 2080,
+      "mean": 0.01993291977409974,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.037037037037037035,
+      "p90": 0.0625
+    },
+    "human_expensive_distribution": {
+      "count": 2080,
+      "mean": 0.09143984405365455,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.16666666666666666,
+      "p90": 0.25
+    },
+    "bot_action_entropy_distribution": {
+      "count": 2080,
+      "mean": 0.3855569736822914,
+      "p10": 0.2751590544811358,
+      "p25": 0.3225792467159997,
+      "median": 0.3762504908959513,
+      "p75": 0.4383449517578088,
+      "p90": 0.5138963986509281
+    },
+    "human_action_entropy_distribution": {
+      "count": 2080,
+      "mean": 0.46060827336153165,
+      "p10": 0.31092973379090444,
+      "p25": 0.369400087970023,
+      "median": 0.45057007576196717,
+      "p75": 0.5390389038026331,
+      "p90": 0.6202900090621914
+    }
+  }
+}

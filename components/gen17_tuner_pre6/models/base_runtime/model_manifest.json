@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "open_source": true,
+  "model_name": "poker44-gen17-tuner-pre6-base-runtime",
+  "model_version": "gen17-pre6-base-runtime",
+  "framework": "python-numpy-logistic-stacked",
+  "license": "MIT",
+  "repo_url": "https://github.com/tomkaba/poker44-miner-gen17-tuner-pre6",
+  "repo_commit": "10eb170d3d52d3a545c65913b14874a6f7939795",
+  "inference_mode": "local",
+  "training_data_statement": "Bundled gen17 pre6 base runtime used by the overlay tuner release.",
+  "data_attestation": "This bundled base runtime is included unchanged as the scorer source for the public overlay tuner release.",
+  "private_data_attestation": "This bundled base runtime does not introduce validator-private human data.",
+  "implementation_files": [
+    "models/base_runtime/hand_model.npz",
+    "models/base_runtime/chunk_aggregator_model.npz",
+    "models/base_runtime/score_chunk.py",
+    "models/base_runtime/feature_extractor_frozen.py"
+  ],
+  "implementation_sha256": "25618b73587042b5370626a92e4f9c9f8580e8fc2e21b962e53ed1cc9a658075",
+  "notes": "Bundled gen17 pre6 base runtime vendored inside the tuner-pre6 overlay release."
+}

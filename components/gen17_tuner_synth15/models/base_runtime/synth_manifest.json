@@ -1,0 +1,31 @@
+{
+  "artifact_name": "gen17-synth15-pre-6-pf-boost-post-penalty-boost",
+  "artifact_dir": "base_runtime",
+  "pre_artifact_name": "gen17-preprod-stage2-hl-cal-mild-sharp",
+  "pre_artifact_dir": "base_runtime/pre_artifact",
+  "pf_penalty_artifact_name": null,
+  "pf_penalty_artifact_dir": null,
+  "pf_boost_artifact_name": "gen17-math-boost-1-pf",
+  "pf_boost_artifact_dir": "base_runtime/pf_boost_artifact",
+  "post_penalty_artifact_name": "gen17-math-1-post",
+  "post_penalty_artifact_dir": "base_runtime/post_penalty_artifact",
+  "post_boost_artifact_name": "gen17-math-1-post-boost",
+  "post_boost_artifact_dir": "base_runtime/post_boost_artifact",
+  "pf_penalty_weight": null,
+  "pf_boost_weight": null,
+  "post_penalty_weight": null,
+  "post_boost_weight": null,
+  "penalty_artifact_name": null,
+  "penalty_artifact_dir": null,
+  "boost_artifact_name": "gen17-math-boost-1-pf",
+  "boost_artifact_dir": "base_runtime/pf_boost_artifact",
+  "penalty_weight": null,
+  "boost_weight": null,
+  "composition": {
+    "pf_penalty_enabled": false,
+    "pf_boost_enabled": true,
+    "post_penalty_enabled": true,
+    "post_boost_enabled": true,
+    "pre_enabled": true
+  }
+}

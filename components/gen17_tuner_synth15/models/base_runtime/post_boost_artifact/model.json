@@ -1,0 +1,210 @@
+{
+  "model_name": "gen17-math-1-post-boost",
+  "version": 1,
+  "created_at_utc": "2026-05-24T15:55:02.607236+00:00",
+  "source_dataset": "/home/tk/training_gen17/artifacts/strategy_fit_preflop_full/chunk_rows.jsonl",
+  "description": "Positive postflop public-state boost model for chunk-level mathematically coherent postflop strategy.",
+  "barrel_like_start": 0.0,
+  "barrel_like_full": 0.2589285714285714,
+  "river_miss_good": 0.1,
+  "river_miss_bad": 0.6666666666666666,
+  "river_aggression_start": 0.0,
+  "river_aggression_full": 0.5,
+  "expensive_call_good": 0.037037037037037035,
+  "expensive_call_bad": 0.16666666666666666,
+  "consistency_target": 0.34770449620801736,
+  "consistency_contrast": 0.4502093301435407,
+  "std_consistency_target": 0.41064823885511986,
+  "std_consistency_contrast": 0.41759883464759573,
+  "dispersion_target": 0.21965697962612898,
+  "dispersion_contrast": 0.09469379476392831,
+  "entropy_target": 0.3762504908959513,
+  "entropy_contrast": 0.45057007576196717,
+  "std_entropy_target": 0.38481193925893087,
+  "std_entropy_contrast": 0.3748930002327735,
+  "weights": {
+    "aggression_component": 0.28,
+    "miss_component": 0.24,
+    "entropy_component": 0.14,
+    "consistency_component": 0.18,
+    "stability_component": 0.16
+  },
+  "recommended_boost_threshold": 0.55,
+  "medium_boost_threshold": 0.45,
+  "high_boost_threshold": 0.72,
+  "recommended_boost_weight": 0.5282504942012235,
+  "recommended_combination": {
+    "mode": "residual_add",
+    "formula": "adjusted_score = base_score + (1 - base_score) * boost_weight * gen17_math_1_post_boost"
+  },
+  "calibration": {
+    "bot_turn_like_distribution": {
+      "count": 2080,
+      "mean": 0.19186555698574928,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.2589285714285714,
+      "p90": 1.0
+    },
+    "bot_river_like_distribution": {
+      "count": 2080,
+      "mean": 0.09656021062271063,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "p90": 0.5
+    },
+    "bot_river_aggression_distribution": {
+      "count": 2080,
+      "mean": 0.33890002618351256,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.3333333333333333,
+      "p75": 0.5,
+      "p90": 0.75
+    },
+    "bot_river_miss_distribution": {
+      "count": 2080,
+      "mean": 0.1803628663003663,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "p90": 1.0
+    },
+    "human_river_miss_distribution": {
+      "count": 2080,
+      "mean": 0.2569284188034188,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.6666666666666666,
+      "p90": 1.0
+    },
+    "bot_expensive_distribution": {
+      "count": 2080,
+      "mean": 0.01993291977409974,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.037037037037037035,
+      "p90": 0.0625
+    },
+    "human_expensive_distribution": {
+      "count": 2080,
+      "mean": 0.09143984405365455,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.16666666666666666,
+      "p90": 0.25
+    },
+    "bot_consistency_distribution": {
+      "count": 2080,
+      "mean": 0.3678357050039259,
+      "p10": 0.24260325667082666,
+      "p25": 0.28956901128996204,
+      "median": 0.34770449620801736,
+      "p75": 0.43290070265394287,
+      "p90": 0.5242968056787932
+    },
+    "human_consistency_distribution": {
+      "count": 2080,
+      "mean": 0.4654659288402845,
+      "p10": 0.3426967592592593,
+      "p25": 0.39059946895424835,
+      "median": 0.4502093301435407,
+      "p75": 0.5251638025737602,
+      "p90": 0.6200386904761905
+    },
+    "bot_std_consistency_distribution": {
+      "count": 2080,
+      "mean": 0.40569770184868154,
+      "p10": 0.36666265813472654,
+      "p25": 0.39165608103602945,
+      "median": 0.41064823885511986,
+      "p75": 0.42660419762231494,
+      "p90": 0.4405609687427094
+    },
+    "human_std_consistency_distribution": {
+      "count": 2080,
+      "mean": 0.40067843565803224,
+      "p10": 0.3354814727602353,
+      "p25": 0.38977400495283604,
+      "median": 0.41759883464759573,
+      "p75": 0.43502054451227146,
+      "p90": 0.44500331852132774
+    },
+    "bot_dispersion_distribution": {
+      "count": 2080,
+      "mean": 0.21719595846126946,
+      "p10": 0.19818094198563893,
+      "p25": 0.21035011278676202,
+      "median": 0.21965697962612898,
+      "p75": 0.22775547996976567,
+      "p90": 0.23517416360536747
+    },
+    "human_dispersion_distribution": {
+      "count": 2080,
+      "mean": 0.09560921511991245,
+      "p10": 0.07273746051104882,
+      "p25": 0.08261906496660595,
+      "median": 0.09469379476392831,
+      "p75": 0.10792832847424684,
+      "p90": 0.11984403392546646
+    },
+    "bot_entropy_distribution": {
+      "count": 2080,
+      "mean": 0.3855569736822914,
+      "p10": 0.2751590544811358,
+      "p25": 0.3225792467159997,
+      "median": 0.3762504908959513,
+      "p75": 0.4383449517578088,
+      "p90": 0.5138963986509281
+    },
+    "human_entropy_distribution": {
+      "count": 2080,
+      "mean": 0.46060827336153165,
+      "p10": 0.31092973379090444,
+      "p25": 0.369400087970023,
+      "median": 0.45057007576196717,
+      "p75": 0.5390389038026331,
+      "p90": 0.6202900090621914
+    },
+    "bot_std_entropy_distribution": {
+      "count": 2080,
+      "mean": 0.3860417121673042,
+      "p10": 0.3490520858967978,
+      "p25": 0.3651627819903791,
+      "median": 0.38481193925893087,
+      "p75": 0.4056033239636586,
+      "p90": 0.4249597617104927
+    },
+    "human_std_entropy_distribution": {
+      "count": 2080,
+      "mean": 0.3758105257264606,
+      "p10": 0.33242453367949776,
+      "p25": 0.3531843607968479,
+      "median": 0.3748930002327735,
+      "p75": 0.4002027686698149,
+      "p90": 0.4248532044341529
+    },
+    "target_mean_penalty_bot_only": 0.3018361796525259,
+    "raw_mean_boost_bot_only": 0.5212484279226143,
+    "effective_mean_boost_bot_only": 0.3018361796525259,
+    "recent_pre6_equalization": {
+      "calibrated_at_utc": "2026-05-24T16:00:00+00:00",
+      "reference_pre_artifact": "/home/tk/training_gen17/artifacts/gen17-preprod-stage2-hl-cal-mild-sharp",
+      "reference_window": "recent_3d_unique_chunks",
+      "target": "match mean absolute score impact of postflop penalty on recent chunks",
+      "recent_chunk_count": 1040,
+      "base_pre_mean_score": 0.34951640410445833,
+      "mean_penalty_effect": 0.13911189284828981,
+      "previous_boost_weight": 0.579063961603616,
+      "previous_mean_boost_effect": 0.152493342956009,
+      "equalized_boost_weight": 0.5282504942012235
+    }
+  }
+}
